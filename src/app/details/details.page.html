@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar id="close-placeholder">
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="returnHome()">
+        <ion-icon src="../../../assets/icons/ic-close.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-col>
+      <ion-row class="image-holder">
+        <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" />
+      </ion-row>
+      <ion-row>
+        <ion-label> Title: {{title}} </ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label> Release Date: {{release_date}} </ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label> Description: {{overview}} </ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-label> Original language: {{original_language}} </ion-label>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+</ion-content>

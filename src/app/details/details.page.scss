@@ -1,0 +1,30 @@
+* {
+  font-family: "Exo 2", sans-serif;
+  --background: #fff;
+  color: #000;
+}
+
+ion-toolbar {
+  --background: rgb(63, 161, 251);
+  --background: linear-gradient(
+    142deg,
+    rgb(98, 84, 252) 0%,
+    rgb(81, 166, 250) 100%
+  );
+}
+
+ion-row {
+  margin: 0 35px 15px 35px;
+}
+
+img {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.image-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

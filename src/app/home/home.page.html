@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Search Movies </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-col>
+      <ion-searchbar
+        [debounce]="400"
+        (ionInput)="searchMovie($event)"
+      ></ion-searchbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-row>
+        <ion-col>
+          <div *ngIf="!movies">
+            <label> Loading... </label>
+            <ion-spinner> </ion-spinner>
+          </div>
+
+          <div *ngIf="movies">
+            <ion-list>
+              <div *ngFor="let movie of movies">
+                <ion-item (click)="openDetails(movie.id)">
+                  <ion-label> {{movie.title}} </ion-label>
+                </ion-item>
+              </div>
+            </ion-list>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
 </ion-content>
